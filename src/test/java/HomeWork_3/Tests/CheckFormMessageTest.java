@@ -8,7 +8,9 @@ import org.testng.annotations.Test;
 
 @Listeners(AllureListener.class)
 public class CheckFormMessageTest extends BaseTest {
+
     public static final String VALID_MESSAGE = "This button is active";
+
     @Test
     @Description("Проверяем сообщение ")
     public void CheckFormMessageText() {

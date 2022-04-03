@@ -19,6 +19,7 @@ public class CheckScreenshotTest extends BaseTest {
             openApp()
                     .checkScreenshot();
         }
+
     @Test
     @Description("Проверяем UI Form страницы с помощью скриншота.")
     public void CheckFormComponentsPageScreenshot(){
@@ -26,6 +27,6 @@ public class CheckScreenshotTest extends BaseTest {
                 .clickFormButton()
                 .checkFormScreenshot();
     }
-    }
+}
 
 

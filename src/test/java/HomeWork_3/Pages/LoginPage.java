@@ -1,6 +1,7 @@
 package HomeWork_3.Pages;
 
-import HomeWork_3.Locators.LoginPageLocators;
+import HomeWork_3.Locators.Interfaces.LoginPageLocators;
+import HomeWork_3.Locators.LocatorService;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
@@ -8,9 +9,11 @@ import io.qameta.allure.Step;
 public class LoginPage {
 
 
+
+
     // Метод позволяет работать с локаторами для нужной нам страницы.
     private LoginPageLocators locator() {
-        return new LoginPageLocators();
+        return LocatorService.LOGIN_PAGE_LOCATORS;
     }
 
     @Step("Кликаем по кнопке логин в форме")

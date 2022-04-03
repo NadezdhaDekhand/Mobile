@@ -19,6 +19,7 @@ public class CheckErrorTextTest extends BaseTest {
                 .clickLoginButton()
                 .checkLoginErrorText(VALID_EMAIL_ADDRESS);
     }
+
     @Test
     @Description("Проверяем сообщение об ошибке при не валидном вводе пароля при регистрации.")
     public void CheckEmptyPassword() {

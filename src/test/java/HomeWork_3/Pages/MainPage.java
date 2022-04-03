@@ -1,6 +1,7 @@
 package HomeWork_3.Pages;
 
-import HomeWork_3.Locators.MainPageLocators;
+import HomeWork_3.Locators.Interfaces.MainPageLocators;
+import HomeWork_3.Locators.LocatorService;
 import com.github.romankh3.image.comparison.ImageComparison;
 import com.github.romankh3.image.comparison.ImageComparisonUtil;
 import com.github.romankh3.image.comparison.model.ImageComparisonResult;
@@ -17,7 +18,7 @@ public class MainPage {
 
     // Метод позволяет нам работать с локаторами для нужной нам страницы.
     private MainPageLocators locator() {
-        return new MainPageLocators();
+        return LocatorService.MAIN_PAGE_LOCATORS;
     }
 
     @Step("Кликаем по кнопке логина в меню и переходим на новую страницу логина")
@@ -29,6 +30,11 @@ public class MainPage {
     public FormComponentsPage clickFormButton() {
         $(locator().formButton()).click();
         return new FormComponentsPage();
+    }
+    @Step("Кликаем по кнопке Swipe в меню и переходим на новую страницу логина")
+    public SwipePage clickSwipeButton() {
+        $(locator().swipeButton()).click();
+        return new SwipePage();
     }
 
     @Step("Делаем скриншот главной страницы и сравниваем с требованием.")

@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 
 @Listeners(AllureListener.class)
 public class ScreenShortFailTest extends BaseTest {
-
     @Test
     @Description("Проверяем поведение теста при неудачной проверке UI главной страницы с помощью скриншота.")
     public void CheckMainPageScreenshot() {

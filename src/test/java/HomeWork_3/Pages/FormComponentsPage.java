@@ -1,6 +1,7 @@
 package HomeWork_3.Pages;
 
-import HomeWork_3.Locators.FormComponentsPageLocators;
+import HomeWork_3.Locators.Interfaces.FormComponentsPageLocators;
+import HomeWork_3.Locators.LocatorService;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.github.romankh3.image.comparison.ImageComparison;
@@ -18,7 +19,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class FormComponentsPage {
     private FormComponentsPageLocators locator() {
-        return new FormComponentsPageLocators();
+        return LocatorService.FORM_COMPONENTS_PAGE_LOCATORS;
     }
     @Step("Кликаем по кнопке active в форме")
     public FormComponentsPage clickActiveButton() {
