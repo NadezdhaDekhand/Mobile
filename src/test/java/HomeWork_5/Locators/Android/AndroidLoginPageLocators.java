@@ -1,33 +1,47 @@
-package HomeWork_3.Locators;
+package HomeWork_5.Locators.Android;
 
+import HomeWork_5.Locators.Interfaces.LoginPageLocators;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
-public class LoginPageLocators {
-
+public class AndroidLoginPageLocators implements LoginPageLocators {
+    @Override
     public By loginButton() {
         return MobileBy.AccessibilityId("button-LOGIN");
     }
+
+    @Override
     public By loginErrorText() {
         return MobileBy.xpath("//android.widget.ScrollView[@content-desc=\"Login-screen\"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView[1]");
     }
-    public By emailButton(){
+
+    @Override
+    public By emailButton() {
         return MobileBy.AccessibilityId("input-email");
     }
 
-    public By passwordButton(){
+    @Override
+    public By passwordButton() {
         return MobileBy.AccessibilityId("input-password");
     }
-    public By repeatPasswordButton(){
+
+    @Override
+    public By repeatPasswordButton() {
         return MobileBy.AccessibilityId("input-repeat-password");
     }
-    public By signUpContainer(){
-        return  MobileBy.xpath("//android.view.ViewGroup[@content-desc=\"button-sign-up-container\"]/android.view.ViewGroup/android.widget.TextView");
+
+    @Override
+    public By signUpContainer() {
+        return MobileBy.xpath("//android.view.ViewGroup[@content-desc=\"button-sign-up-container\"]/android.view.ViewGroup/android.widget.TextView");
     }
-    public By signUpButton(){
+
+    @Override
+    public By signUpButton() {
         return MobileBy.xpath("//android.view.ViewGroup[@content-desc=\"button-SIGN UP\"]/android.view.ViewGroup");
     }
-    public By signUpErrorText(){
+
+    @Override
+    public By signUpErrorText() {
         return MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.TextView");
     }
 }
