@@ -1,0 +1,15 @@
+stages:
+  - test
+
+test_tun_job:
+  stage: test
+  tags:
+    - gb-runner
+  only:
+    -ci-cd
+  script:
+    - mvn clean test
+  artifacts:
+    when: always
+    paths:
+      - allure-results
