@@ -1,7 +1,6 @@
 stages:
   - test
 
-
 test_tun_job:
   stage: test
   tags:
