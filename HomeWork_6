@@ -1,0 +1,23 @@
+let nameWork = "Тракторист"
+let age = 25
+let sex = "W"
+switch(nameWork, age) {
+case ( , 1...17):
+  print("Ты маленький!")
+case ("Тракторист", 18...50) where sex == "W":
+  print("Девушек не берем !!!")
+case  ("Тракторист", 18...50) where sex == "M": 
+  print("Вы нам подходите!")
+case let(name, age):
+  print("\(name) в \(age) год?")
+default:
+  print("Введите корректные данные!)
+}  
+///////////////////////////////////////////////////////////////////
+
+for i in 0...200 {
+  if i == 15 {
+      break
+  }
+  print(i)
+}  
