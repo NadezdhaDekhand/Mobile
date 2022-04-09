@@ -1,15 +1,11 @@
-package HomeWork_3.Locators.Android;
+package HomeWork_3.Locators;
 
-import HomeWork_3.Locators.Interfaces.SwipePageLocators;
+
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
-public class AndroidSwipePageLocators implements SwipePageLocators {
+public class SwipePageLocators {
 
-
-
-
-    @Override
     public By swipeNotEmpty() {
         return MobileBy.xpath("//android.view.ViewGroup[@content-desc=\"Swipe-screen\"]/android.view.ViewGroup[1]/android.widget.TextView");
     }

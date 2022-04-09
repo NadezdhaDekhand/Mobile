@@ -1,13 +1,13 @@
 package HomeWork_3.Pages;
 
-import HomeWork_3.Locators.Interfaces.SwipePageLocators;
-import HomeWork_3.Locators.LocatorService;
+
+import HomeWork_3.Locators.SwipePageLocators;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
 
 public class SwipePage {
-    private SwipePageLocators locator() {return LocatorService.SWIPE_PAGE_LOCATORS;}
+    private SwipePageLocators locator() {return new SwipePageLocators();}
 
     @Step("Проверяем ")
     public SwipePage checkSwipeText(String text) {

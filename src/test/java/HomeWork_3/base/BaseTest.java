@@ -20,7 +20,7 @@ public class BaseTest {
     public MainPage openApp() {
         WebDriver driver = null;
         try {
-            driver = getDriver();
+            driver = getAndroidDriver();
         } catch (MalformedURLException e) {
             e.printStackTrace();
             System.out.println("Opps, we have problems with URL for driver!");
@@ -29,42 +29,30 @@ public class BaseTest {
         WebDriverRunner.setWebDriver(driver);
         // возвращаем главную страницу для будущей работы с ней в тесте
         return new MainPage();
+
     }
 
-    public static WebDriver getDriver() throws MalformedURLException {
+    public static WebDriver getAndroidDriver() throws MalformedURLException {
         // устанавливаем capabilities
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        switch (System.getProperty("platform")) {
-            case "Android":
+
+
                 capabilities.setCapability("platformName", "Android");
                 capabilities.setCapability("deviceName", "Pixel");
                 capabilities.setCapability("platformVersion", "11");
                 capabilities.setCapability("udid", "emulator-5554");
                 capabilities.setCapability("automationName", "UiAutomator2");
                 capabilities.setCapability("app", "C:/Users/UserProfile/Downloads/Android-NativeDemoApp-0.2.1.apk");
-                break;
-            case "iOS":
-                // устанавливаем capabilities.
-                capabilities.setCapability("platformName", "iOS");
-                capabilities.setCapability("deviceName", "");
-                capabilities.setCapability("platformVersion", "");
-                capabilities.setCapability("udid", "");
-                capabilities.setCapability("automationName", "");
-                capabilities.setCapability("app", "");
-                break;
-        }
-
-
-        // папка для сохранения скриншотов selenide
-                Configuration.reportsFolder = "screenshots/actual";
-                // устанавливаем и открываем приложение
-                return new AppiumDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-        }
-
-        @AfterClass
-        public void setDown () throws IOException {
-            close();
-        }
-
-
+        Configuration.reportsFolder = "screenshots/actual";
+        // устанавливаем и открываем приложение
+        return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
+
+    @AfterClass
+    public void setDown() throws IOException {
+        close();
+    }
+}
+
+
+
