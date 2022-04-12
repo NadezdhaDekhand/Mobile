@@ -1,17 +1,18 @@
-stages:
-  - test
+
+      stages:
+        -test
+
+      test_tun_job:
+        stage: test
+      tags:
+        - gb-runner
+      only:
+        -  gb_lesson-8
+      script:
+        - mvn clean test  -DsuiteXmlFile=testng.xml
+      artifacts:
+        when: always
+        paths:
+          - allure-results
 
 
-test_tun_job:
-  stage: test
-  tags:
-    - gb-runner
-  only:
-    - gb_lesson-8
-  script:
-
-    - mvn clean test
-  artifacts:
-    when: always
-    paths:
-      - allure-results
