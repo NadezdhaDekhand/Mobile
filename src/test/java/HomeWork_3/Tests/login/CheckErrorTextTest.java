@@ -1,4 +1,4 @@
-package HomeWork_3.Tests;
+package HomeWork_3.Tests.login;
 
 import HomeWork_3.Listener.AllureListener;
 import HomeWork_3.base.BaseTest;
@@ -19,7 +19,6 @@ public class CheckErrorTextTest extends BaseTest {
                 .clickLoginButton()
                 .checkLoginErrorText(VALID_EMAIL_ADDRESS);
     }
-
     @Test
     @Description("Проверяем сообщение об ошибке при не валидном вводе пароля при регистрации.")
     public void CheckEmptyPassword() {
