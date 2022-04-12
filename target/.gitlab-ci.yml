@@ -7,7 +7,7 @@ test_tun_job:
   tags:
     - gb-runner
   only:
-    - lesson_8
+    - gb_lesson-8
   script:
     - mvn clean test
   artifacts:
