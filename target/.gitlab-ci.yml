@@ -6,6 +6,7 @@
       tags:
         - gb-runner
       only:
+
         -  gb_lesson-8
       script:
         - mvn clean test  -DsuiteXmlFile=testNG.xml
