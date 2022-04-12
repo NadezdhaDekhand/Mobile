@@ -5,10 +5,12 @@ test_tun_job:
   stage: test
   tags:
     - gb-runner
+
   only:
-    -ci-cd
+   - lesson_8
   script:
     - mvn clean test
+
   artifacts:
     when: always
     paths:
