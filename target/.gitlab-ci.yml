@@ -5,11 +5,15 @@ test_tun_job:
   stage: test
   tags:
     - gb-runner
+
+
   only:
-    -ci-cd
+    - lesson_8
   script:
-    - mvn clean test
+    - mvn clean test -DsuiteXmlFile=testNG.xml
+
   artifacts:
     when: always
+
     paths:
       - allure-results
