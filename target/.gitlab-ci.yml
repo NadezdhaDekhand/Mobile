@@ -6,7 +6,6 @@ test_tun_job:
   tags:
     - gb-runner
 
-
   only:
     - lesson_8
   script:
