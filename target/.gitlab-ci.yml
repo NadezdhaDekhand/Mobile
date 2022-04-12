@@ -9,6 +9,7 @@ test_tun_job:
   only:
     - gb_lesson-8
   script:
+
     - mvn clean test
   artifacts:
     when: always
