@@ -8,9 +8,9 @@ test_tun_job:
 
 
   only:
-    -ci-cd
+    - lesson_8
   script:
-    - mvn test
+    - mvn clean test
   artifacts:
     when: always
 
